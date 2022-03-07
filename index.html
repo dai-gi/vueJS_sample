@@ -17,11 +17,15 @@
         <table class="contact" id="table">
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">お名前</label></td>
-            <td class="contact_input"><input type="text" name="name" id="name"></td>
+            <td class="contact_input">
+              <input v-model="formData.name" type="text" name="name" id="name">
+            </td>
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール</label></td>
-            <td class="contact_input"><input type="email" name="email" id="email"></td>
+            <td class="contact_input">
+              <input v-model="formData.email" type="email" name="email" id="email">
+            </td>
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール(確認)</label></td>
@@ -37,6 +41,11 @@
           <button type="submit" class="contact_btn submit_btn">送信する</button>
         </div>
       </form>
+      <section class="contact_confirm">
+        <h2>ご記入内容の確認</h2>
+        <p><span class="bold">お名前:</span><span>{{ formData.name }}</span></p>
+        <p><span class="bold">Eメール:</span><span>{{ formData.email }}</span></p>
+      </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="javascripts/validation.js"></script>
