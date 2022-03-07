@@ -24,13 +24,13 @@
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール</label></td>
             <td class="contact_input">
-              <input v-model="formData.email" type="email" name="email" id="email">
+              <input :class="{ alert_bg: formData.email !== formData.email_confirm }" v-model="formData.email" type="email" name="email" id="email">
             </td>
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール(確認)</label></td>
             <td class="contact_input">
-              <input v-model="formData.email_confirm" type="email" name="email_confirm" id="email_confirm">
+              <input :class="{ alert_bg: formData.email !== formData.email_confirm }" v-model="formData.email_confirm" type="email" name="email_confirm" id="email_confirm">
             </td>
           </tr>
           <tr class="contact_content" id="content_field">
