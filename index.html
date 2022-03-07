@@ -12,7 +12,7 @@
         <h1>CONTACT</h1>
         <p>お問い合わせ</p>
       </div>
-      <p class="alert_color">{{ errorMessage }}</p>
+      <p class="alert_color" v-if="formData.email !== formData.email_confirm">{{ errorMessage }}</p>
       <form action="#" method="POST" id="form">
         <table class="contact" id="table">
           <tr class="contact_line">
@@ -29,11 +29,15 @@
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール(確認)</label></td>
-            <td class="contact_input"><input type="email" name="email_confirm" id="email_confirm"></td>
+            <td class="contact_input">
+              <input v-model="formData.email_confirm" type="email" name="email_confirm" id="email_confirm">
+            </td>
           </tr>
           <tr class="contact_content" id="content_field">
             <td class="contact_sign"><label for="content">内容</label></td>
-            <td class="contact_input"><textarea name="content" id="content"></textarea></td>
+            <td class="contact_input">
+              <textarea v-model="formData.content" name="content" id="content"></textarea>
+            </td>
           </tr>
         </table>
         <div class="contact_btn_area">
@@ -45,6 +49,8 @@
         <h2>ご記入内容の確認</h2>
         <p><span class="bold">お名前:</span><span>{{ formData.name }}</span></p>
         <p><span class="bold">Eメール:</span><span>{{ formData.email }}</span></p>
+        <p><span class="bold">Eメール(確認):</span><span>{{ formData.email_confirm }}</span></p>
+        <p><span class="bold">内容:</span><span>{{ formData.content }}</span></p>
       </section>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>

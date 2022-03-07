@@ -5,6 +5,8 @@ const app = new Vue({
     formData: {
       name: '',
       email: '',
+      email_confirm: '',
+      content: '',
     },
   }
 })
