@@ -4,9 +4,15 @@ const app = new Vue({
     errorMessage: 'Eメールが一致しません',
     formData: {
       name: '',
+      region: '',
       email: '',
       email_confirm: '',
       content: '',
     },
+    regions: [
+      '東北',
+      '関東',
+      '関西'
+    ]
   }
 })
