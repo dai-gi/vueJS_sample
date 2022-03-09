@@ -12,7 +12,7 @@
         <h1>CONTACT</h1>
         <p>お問い合わせ</p>
       </div>
-      <p class="alert_color" v-if="formData.email !== formData.email_confirm">{{ errorMessage }}</p>
+      <p class="alert_color" v-if="!validation">{{ errorMessage }}</p>
       <form action="#" method="POST" id="form">
         <table class="contact" id="table">
           <tr class="contact_line">

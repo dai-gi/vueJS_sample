@@ -23,7 +23,10 @@ const app = new Vue({
     closeClickArea() {
       this.confirmView = false;
     }
+  },
+  computed: {
+    validation: function() {
+      return this.formData.email === this.formData.email_confirm;
+    }
   }
-  // methods: {
-  // }
 })
