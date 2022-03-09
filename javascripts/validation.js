@@ -13,6 +13,17 @@ const app = new Vue({
       '東北',
       '関東',
       '関西'
-    ]
+    ],
+    confirmView: false,
+  },
+  methods: {
+    openClickArea() {
+      this.confirmView = true;
+    },
+    closeClickArea() {
+      this.confirmView = false;
+    }
   }
+  // methods: {
+  // }
 })
