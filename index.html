@@ -12,7 +12,7 @@
         <h1>CONTACT</h1>
         <p>お問い合わせ</p>
       </div>
-      <p class="alert_color" v-if="!validation">{{ errorMessage }}</p>
+      <p class="alert_color" v-if="validation">{{ errorMessage }}</p>
       <form action="#" method="POST" id="form">
         <table class="contact" id="table">
           <tr class="contact_line">
@@ -32,13 +32,13 @@
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール</label></td>
             <td class="contact_input">
-              <input :class="{ alert_bg: formData.email !== formData.email_confirm }" v-model="formData.email" type="email" name="email" id="email">
+              <input :class="{ alert_bg: validation }" v-model="formData.email" type="email" name="email" id="email">
             </td>
           </tr>
           <tr class="contact_line">
             <td class="contact_sign"><label for="name">Eメール(確認)</label></td>
             <td class="contact_input">
-              <input :class="{ alert_bg: formData.email !== formData.email_confirm }" v-model="formData.email_confirm" type="email" name="email_confirm" id="email_confirm">
+              <input :class="{ alert_bg: validation }" v-model="formData.email_confirm" type="email" name="email_confirm" id="email_confirm">
             </td>
           </tr>
           <tr class="contact_content" id="content_field">
