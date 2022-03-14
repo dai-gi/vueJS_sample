@@ -26,8 +26,11 @@ const app = new Vue({
   },
   computed: {
     validation: function() {
-      // return this.formData.email === this.formData.email_confirm;
-      return this.formData.email_confirm !== ''
+      email = this.formData.email;
+      email_confirm = this.formData.email_confirm;
+      if(email !== '' && email_confirm !== '') {
+        return email !== email_confirm;
+      }
     }
   }
 })
