@@ -18,7 +18,11 @@ const app = new Vue({
   },
   methods: {
     openClickArea() {
-      this.confirmView = true;
+      if(email === email_confirm) {
+        this.confirmView = true;
+      } else {
+        this.confirmView = false;
+      }
     },
     closeClickArea() {
       this.confirmView = false;
