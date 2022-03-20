@@ -15,13 +15,12 @@ const app = new Vue({
       { id: 3, name: '関西' }
     ],
     confirmView: false,
-    errorModal: false,
+    modalView: false,
   },
   methods: {
     openCheckArea() {
-      // 要件2の改修
       if (!this.validation) {
-        this.errorModal = true;
+        this.showModal();
       } else {
         this.confirmView = true;
       }
@@ -29,16 +28,17 @@ const app = new Vue({
     closeCheckArea() {
       this.confirmView = false;
     },
-    closeErrorModal() {
-      this.errorModal = false;
+    showModal() {
+      this.modalView = true;
+    },
+    hideModal() {
+      this.modalView = false;
     },
   },
   computed: {
-    // 要件1の改修
     validation: function() {
       return this.formData.email === '' || this.formData.emailConfirm === '' || this.formData.email === this.formData.emailConfirm
     },
-    // 要件3の改修
     errorClass: function() {
       return this.validation ? false : 'alert_bg';
     }

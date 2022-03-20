@@ -12,11 +12,11 @@
         <h1>CONTACT</h1>
         <p>お問い合わせ</p>
       </div>
-      <div v-if="errorModal" class="modal_back">
+      <div v-if="modalView" class="modal_back">
         <div class="modal_body">
           <p class="modal_sign">エラーがあります</p>
           <p class="alert_color">{{ errorMessage }}</p>
-          <button @click="closeErrorModal">close</button>
+          <button @click="hideModal">close</button>
         </div>
       </div>
       <form action="#" method="POST" id="form">
