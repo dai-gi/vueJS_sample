@@ -1,3 +1,31 @@
+Vue.component('common-modal', {
+  template: `
+    <div class="modal_back">
+      <div class="modal_body">
+        <p class="modal_sign">{{ defaultMessage }}</p>
+        <p class="alert_color">{{ message }}</p>
+        <button @click="closeModal">close</button>
+      </div>
+    </div>
+  `,
+
+  props: {
+    message: String,
+  },
+
+  methods: {
+    closeModal(){
+      this.$emit('close');
+    }
+  },
+
+  data: function() {
+    return {
+      defaultMessage: '入力エラーがあります',
+    }
+  }
+})
+
 const app = new Vue({
   el: '#app',
   data: {

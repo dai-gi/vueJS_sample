@@ -12,13 +12,7 @@
         <h1>CONTACT</h1>
         <p>お問い合わせ</p>
       </div>
-      <div v-if="modalView" class="modal_back">
-        <div class="modal_body">
-          <p class="modal_sign">エラーがあります</p>
-          <p class="alert_color">{{ errorMessage }}</p>
-          <button @click="hideModal">close</button>
-        </div>
-      </div>
+      <common-modal v-if="modalView" :message="errorMessage" @close="hideModal"></common-modal>
       <form action="#" method="POST" id="form">
         <table class="contact" id="table">
           <tr class="contact_line">
