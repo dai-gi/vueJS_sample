@@ -15,16 +15,23 @@ const app = new Vue({
       { id: 3, name: '関西' }
     ],
     confirmView: false,
+    errorModal: false,
   },
   methods: {
     openCheckArea() {
       // 要件2の改修
-      if (!this.validation) return false;
-      this.confirmView = true;
+      if (!this.validation) {
+        this.errorModal = true;
+      } else {
+        this.confirmView = true;
+      }
     },
     closeCheckArea() {
       this.confirmView = false;
-    }
+    },
+    closeErrorModal() {
+      this.errorModal = false;
+    },
   },
   computed: {
     // 要件1の改修
